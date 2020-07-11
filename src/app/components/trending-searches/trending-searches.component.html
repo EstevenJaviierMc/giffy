@@ -3,7 +3,7 @@
   <a
     *ngFor="let trending of trendings; index as i"
     [style]="generateMultiColorCategory(i)"
-    [routerLink]="['/gifs/search']"
+    [routerLink]="['/search']"
     [queryParams]="{ keyword: trending }"
     class="badge"
   >
