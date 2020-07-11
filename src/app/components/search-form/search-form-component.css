@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+select {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-search {
+  position: sticky;
+  top: 60px;
+}

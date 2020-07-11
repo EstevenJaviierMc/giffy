@@ -1,0 +1,12 @@
+<div class="tendencias">
+  <h2>Tendencias</h2>
+  <a
+    *ngFor="let trending of trendings; index as i"
+    [style]="generateMultiColorCategory(i)"
+    [routerLink]="['/gifs/search']"
+    [queryParams]="{ keyword: trending }"
+    class="badge"
+  >
+    {{ trending }}
+  </a>
+</div>

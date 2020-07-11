@@ -1,0 +1,31 @@
+<ng-container *ngIf="gifs">
+  <div *ngIf="gifs.length < 1">No hay resultados</div>
+
+  <div
+    *ngIf="gifs.length > 0"
+    class="card-columns"
+    style="min-height: 100vh;"
+  >
+    <div class="card" *ngFor="let gif of gifs; index as i">
+      <button class="btn-like">
+        ❤
+      </button>
+      <img
+        class="card-img-top"
+        ImgLazy
+        [imagen]="gif.images.downsized_medium.url"
+        [alt]="gif.title"
+      />
+      <div class="card-body">
+        <h4 class="card-title">{{ gif.title }}</h4>
+        <a
+          [routerLink]="['/gif', gif.id]"
+          class="btn btn-outline-success btn-block"
+        >
+          Ver
+        </a>
+      </div>
+    </div>
+  </div>
+  <div InfiniteScroll [scrolled]="getMore"></div>
+</ng-container>
